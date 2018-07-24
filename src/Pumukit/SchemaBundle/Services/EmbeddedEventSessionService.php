@@ -217,7 +217,9 @@ class EmbeddedEventSessionService
         $this->endPipeline($pipeline);
         $pipeline[] = array('$limit' => 10);
 
-        return $this->collection->aggregate($pipeline)->toArray();
+        $options = array('cursor' => array());
+
+        return $this->collection->aggregate($pipeline, $options)->toArray();
     }
 
     /**
@@ -237,7 +239,9 @@ class EmbeddedEventSessionService
         $this->endPipeline($pipeline);
         $pipeline[] = array('$limit' => 20);
 
-        return $this->collection->aggregate($pipeline)->toArray();
+        $options = array('cursor' => array());
+
+        return $this->collection->aggregate($pipeline, $options)->toArray();
     }
 
     /**
@@ -260,7 +264,9 @@ class EmbeddedEventSessionService
         );
         $this->endPipeline($pipeline);
 
-        return $this->collection->aggregate($pipeline)->toArray();
+        $options = array('cursor' => array());
+
+        return $this->collection->aggregate($pipeline, $options)->toArray();
     }
 
     /**

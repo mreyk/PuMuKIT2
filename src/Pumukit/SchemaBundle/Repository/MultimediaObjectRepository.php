@@ -235,7 +235,8 @@ class MultimediaObjectRepository extends DocumentRepository
             array('$unwind' => '$people'),
         );
 
-        $aggregation = $collection->aggregate($pipeline);
+        $options = array('cursor' => array());
+        $aggregation = $collection->aggregate($pipeline, $options);
 
         $people = array();
 
@@ -289,7 +290,8 @@ class MultimediaObjectRepository extends DocumentRepository
             array('$unwind' => '$people'),
         );
 
-        $aggregation = $collection->aggregate($pipeline);
+        $options = array('cursor' => array());
+        $aggregation = $collection->aggregate($pipeline, $options);
 
         $persons = array();
 
